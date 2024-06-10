@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Encryption</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('background.jpg');
+      background-size: cover;
+      margin: 0;
+      padding: 20px;
+      color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #e5d5d5;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      resize: none;
+      color: #ffffff;
+      background-color: #1c1c1c;
+      border: 1px solid #4CAF50;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .output-container {
+      margin-top: 20px;
+    }
+
+    .output-container p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Encryption Using Cryptographic Algorithms</h1>
+  
+  <div class="container">
+    <label for="plaintext">Enter Text to Encrypt:</label>
+    <textarea id="plaintext" rows="4"></textarea>
+    
+    <button onclick="encrypt()">Encrypt</button>
+    <button onclick="decrypt()">Decrypt</button>
+    
+    <div class="output-container">
+      <p>Encrypted Text:</p>
+      <textarea id="encryptedText" rows="4" readonly></textarea>
+      
+      <p>Decrypted Text:</p>
+      <textarea id="decryptedText" rows="4" readonly></textarea>
+    </div>
+  </div>
+  
+  <script>
+    // JavaScript code goes here
+    function encrypt() {
+      var plaintext = document.getElementById("plaintext").value;
+      // You can replace this with your encryption logic using a cryptographic algorithm
+      var encryptedText = btoa(plaintext);
+      document.getElementById("encryptedText").value = encryptedText;
+    }
+    
+    function decrypt() {
+      var encryptedText = document.getElementById("encryptedText").value;
+      // You can replace this with your decryption logic using a cryptographic algorithm
+      var decryptedText = atob(encryptedText);
+      document.getElementById("decryptedText").value = decryptedText;
+    }
+  </script>
+</body>
+</html>
